@@ -2,6 +2,9 @@ resource "aws_key_pair" "instance_key" {
     
     public_key = var.key_public_path
     key_name = var.key_name
+    lifecycle {
+    ignore_changes = [key_name]
+  }
 }
 
 data "aws_ami" "webimage" {
