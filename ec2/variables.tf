@@ -6,6 +6,13 @@ variable "key_private_path" {
    type=string  
 }
 
+variable "key_name" {
+    type = string
+}
+
+
+
+
 
 variable "ami_filter_name" {
   type    = string
@@ -66,5 +73,6 @@ variable "script" {
 
 variable "instance_count" {
   type = number
+  default = 1
   
 }

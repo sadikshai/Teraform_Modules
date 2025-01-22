@@ -1,10 +1,11 @@
-# resource "aws_key_pair" "instance_key" { 
-#     public_key = var.key_public_path
-#     key_name = var.key_name
-#     lifecycle {
-#     ignore_changes = [key_name]
-#   }
-# }
+resource "aws_key_pair" "instance_key" {
+    
+    public_key = var.key_public_path
+    key_name = var.key_name
+    lifecycle {
+    ignore_changes = [key_name]
+  }
+}
 
 data "aws_ami" "webimage" {
   most_recent=true
@@ -22,7 +23,7 @@ resource "aws_instance" "web" {
   count=var.instance_count
   ami=data.aws_ami.webimage.id
   instance_type = var.instance_type
-  key_name = var.key_public_path
+  key_name = aws_key_pair.instance_key.key_name
   associate_public_ip_address = var.associate_public_ip_address
   subnet_id = var.subnet_id
   vpc_security_group_ids = [var.vpc_security_group_ids]
