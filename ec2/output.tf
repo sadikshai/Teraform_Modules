@@ -12,11 +12,3 @@ output "ssh_commands" {
 }
 
 
-output "instance_ids" {
-  value = aws_instance.web[*].id
-}
-
-
-output "web_count" {
-  value = length(aws_instance.web)
-}
