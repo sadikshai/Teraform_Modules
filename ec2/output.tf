@@ -10,3 +10,16 @@ output "ssh_commands" {
     instance.public_ip
   )]
 }
+
+
+output "instance_id" {
+  
+  value = aws_instance.web[count.index].id
+  
+}
+
+
+output "web_count" {
+  value = aws_instance.web.count
+  
+}
