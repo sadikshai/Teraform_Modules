@@ -13,10 +13,10 @@ output "ssh_commands" {
 
 
 output "instance_ids" {
-  value = aws_instance.web[*].id  # Use the splat operator to get all instance IDs
+  value = aws_instance.web[*].id
 }
 
 
 output "web_count" {
-  value = length(aws_instance.web)  # Get the number of instances
+  value = length(aws_instance.web)
 }
