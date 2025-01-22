@@ -6,9 +6,9 @@ variable "key_private_path" {
    type=string  
 }
 
-variable "key_name" {
-    type = string
-}
+# variable "key_name" {
+#     type = string
+# }
 
 
 
