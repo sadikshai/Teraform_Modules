@@ -1,5 +1,5 @@
 resource "aws_key_pair" "instance_key" {
-    count=var.instance_count
+    
     public_key = var.key_public_path
     key_name = var.key_name
 }
