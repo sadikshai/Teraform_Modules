@@ -12,6 +12,8 @@ output "ssh_commands" {
 }
 
 
-output "instance_id" {
+output "instance_ids" {
   value = aws_instance.web[*].id
+  description = "The IDs of all the instances created."
 }
+
