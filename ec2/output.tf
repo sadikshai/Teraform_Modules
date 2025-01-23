@@ -13,6 +13,6 @@ output "ssh_commands" {
 
 
 output "Instance_id" {
-  value = aws_instance.web.id
+  value = aws_instance.web.id[*]
   
 }
